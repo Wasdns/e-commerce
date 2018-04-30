@@ -27,6 +27,6 @@ Finally, install saleor:
 > npm install
 > npm run build-assets
 > npm run build-emails
-> python manage.py runserver
+> SECRET_KEY='saleor' python manage.py runserver
 
 Congratulations, you have installed saleor sucessfully!
