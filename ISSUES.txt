@@ -1,0 +1,37 @@
+Known issues
+
+1.SyntaxError: Unexpected strict mode reserved word
+
+(1) Steps to produce this problem:
+> cd saleor
+> source env/bin/activate
+> npm install
+
+(2) Error log:
+
+```
+let url
+^^^
+SyntaxError: Unexpected strict mode reserved word
+    at Module._compile (module.js:439:25)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/access.js:5:11)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+```
+
+(3) Solution: 
+> curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+
+// Close this terminal and open a new terminal
+> nvm install v8.6.0 // install nodejs v8.6.0 
+> cd saleor/
+> source env/bin/activate
+> npm install
+
+
