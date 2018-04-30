@@ -1,0 +1,32 @@
+< Install saleor on Ubuntu 14.04 >
+
+This file provides the necessary instructions for installing saleor on Ubuntu 14.04. 
+
+First, you should execute the "install_saleor.sh" to install the dependencies needed by saleor and clone the saleor project.
+
+Second, create the virtual environment using virtualenv and install the dependencies:
+> cd saleor/
+> pip3 install --upgrade virtualenv
+> virtualenv -p python3.6 env
+> source env/bin/activate
+> pip install -r requirements.txt
+
+Third, create your PostgreSQL user and database by executing the following commands:
+> cd saleor/
+> export SECRET_KEY=‘saleor’
+> sudo -u postgres createuser --superuser saleor
+> sudo -u postgres psql
+> \password saleor (using the password "saleor")
+> \q
+> sudo -u postgres createdb -O saleor saleor
+
+Hint: the commands of PostgreSQL could be found at http://www.ruanyifeng.com/blog/2013/12/getting_started_with_postgresql.html 
+
+Finally, install saleor:
+> SECRET_KEY='saleor' python manage.py migrate
+> npm install
+> npm run build-assets
+> npm run build-emails
+> python manage.py runserver
+
+Congratulations, you have installed saleor sucessfully!

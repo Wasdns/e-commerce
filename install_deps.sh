@@ -6,7 +6,9 @@ sudo apt-get update
 sudo apt-get install python3.6
 
 # install Node.js
-curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+# uninstall nodejs and npm first
+sudo apt-get remove --purge nodejs npm
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install -y build-essential
 
@@ -21,10 +23,4 @@ sudo apt-get install postgresql-9.6
 sudo apt-get install build-essential python3-dev python3-pip python3-cffi libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
 git clone https://github.com/mirumee/saleor.git
 cd saleor/
-# create virtual environment
-pip3 install --upgrade virtualenv
-virtualenv -p python3.6 env
-source env/bin/activate
-pip install -r requirements.txt
-
 
