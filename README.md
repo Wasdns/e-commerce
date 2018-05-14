@@ -8,24 +8,26 @@ This project is based on [saleor](https://github.com/mirumee/saleor), an e-comme
 
 1.Install saleor by following the [INSTALL.txt](./INSTALL.txt).
 
-2.Replace the folder "saleor/" with our new folder "e-commerce/saleor"
-
-e.g., we download our project under the saleor/ directory:
-
-```
-cd saleor/
-mv saleor/ saleor_bak/
-git clone https://github.com/Wasdns/e-commerce.git
-mv e-commerce/saleor/ ./
-```
-
-3.Start local server:
+2.Start local server:
 
 ```
 SECRET_KEY='saleor' python manage.py runserver
 ```
 
 Then you can visit `localhost:8000`.
+
+3.Login as a superuser:
+
+You can use the account "saleor@mail.com" with the password "saleor" to login into the saleor dashboard as a superuser.
+
+4.Add some products to your e-commerce website:
+
+Go to the dashboard, and create the following things in order:
+- Collections: add the label of your goods;
+- Categories: add the category of your goods;
+- Products: add your goods to a specific category.
+
+We provide some available figures of goods for eatting under the folder [goods/figures](goods/figures). You can exploit these figures as the figures of your goods.
 
 ## Author
 
