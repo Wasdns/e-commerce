@@ -22,11 +22,17 @@ Third, create your PostgreSQL user and database by executing the following comma
 
 Hint: the commands of PostgreSQL could be found at http://www.ruanyifeng.com/blog/2013/12/getting_started_with_postgresql.html 
 
-Finally, install saleor:
+Finally, install saleor and create a superuser:
+# Install saleor
 > SECRET_KEY='saleor' python manage.py migrate
 > npm install
 > npm run build-assets
 > npm run build-emails
 > SECRET_KEY='saleor' python manage.py runserver
+
+# To create the superuser, execute the following commands:
+> SECRET_KEY='saleor' python manage.py createsuperuser
+# We choose “saleor@mail.com” as the email and “saleor“ as the password
+# After that, you can login to the dashboard of saleor website as a superuser.
 
 Congratulations, you have installed saleor sucessfully!
