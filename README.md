@@ -11,7 +11,7 @@ This project is based on [saleor](https://github.com/mirumee/saleor), an e-comme
 2.Start local server:
 
 ```
-SECRET_KEY='saleor' python manage.py runserver
+SECRET_KEY='saleor' python manage.py runserver 0.0.0.0:8000
 ```
 
 Then you can visit `localhost:8000`.
@@ -27,7 +27,7 @@ Go to the dashboard, and create the following things in order:
 - Categories: add the category of your goods;
 - Products: add your goods to a specific category.
 
-We provide some available figures of goods for eatting under the folder [goods/figures](goods/figures). You can exploit these figures as the figures of your goods.
+We provide some available figures of goods for eatting under the folder [products/](products/). You can exploit these figures as the figures of your goods.
 
 ## Author
 
